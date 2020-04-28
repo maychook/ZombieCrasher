@@ -24,7 +24,9 @@ public class BaseController : MonoBehaviour
     private void Awake()
     {
         soundManager = GetComponent<AudioSource>();
+        print("start awake speed: " + speed.ToString());
         speed = new Vector3(0f, 0f, z_Speed);
+        print("end awake speed: " + speed.ToString());
     }
 
     protected void MoveLeft()
@@ -73,18 +75,6 @@ public class BaseController : MonoBehaviour
     protected void MoveFast()
     {
         speed = new Vector3(speed.x, 0f, accelerated);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 } // class

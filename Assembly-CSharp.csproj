@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player Scripts\BaseController.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerController.cs" />
     <None Include="Assets\Models\Military\Materials\UnlitVertexColour_Alpha.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/maypo/OneDrive/מסמכים/Unity/Unity Course/ZombieCrasher/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
