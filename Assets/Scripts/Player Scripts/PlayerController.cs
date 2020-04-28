@@ -21,12 +21,13 @@ public class PlayerController : BaseController
     void Update()
     {
         ControlMovementWithKeyboard();
-
+        ChangeRotation();
     }
 
     private void FixedUpdate()
     {
         MoveTank();
+        
     }
 
     void MoveTank()
@@ -73,6 +74,25 @@ public class PlayerController : BaseController
         {
             MoveNormal(); // funciton from the base controller script
         }
+    }
 
+    void ChangeRotation()
+    {
+        if (speed.x > 0)
+        {
+            // go from current rotatoin to the maxangle rotation in the given time
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(0f, maxAngle, 0f), Time.deltaTime * rotationSpeed);
+        }
+        else if(speed.x < 0)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(0f, -maxAngle, 0f), Time.deltaTime * rotationSpeed);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * rotationSpeed);
+        }
     }
 }
