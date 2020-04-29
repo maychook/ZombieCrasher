@@ -6,6 +6,10 @@ public class PlayerController : BaseController
 {
     private Rigidbody myBody;
 
+    public Transform bullet_StartPoint;
+    public GameObject bullet_Prefab;
+    public ParticleSystem shootFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,7 @@ public class PlayerController : BaseController
     {
         ControlMovementWithKeyboard();
         ChangeRotation();
+        ShootingControl();
     }
 
     private void FixedUpdate()
@@ -93,6 +98,17 @@ public class PlayerController : BaseController
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * rotationSpeed);
+        }
+    }
+
+    public void ShootingControl()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject bullet = Instantiate(bullet_Prefab, bullet_StartPoint.position,
+                Quaternion.identity);
+            bullet.GetComponent<BulletScript>().Move(2000f);
+            shootFX.Play();
         }
     }
 }
