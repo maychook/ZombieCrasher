@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Block Scripts\GroundBlock.cs" />
     <Compile Include="Assets\Scripts\Bullet Scripts\BulletScript.cs" />
     <Compile Include="Assets\Scripts\Camera Scripts\SmoothFollow.cs" />
+    <Compile Include="Assets\Scripts\Helper Scripts\GameplayController.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\BaseController.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerController.cs" />
     <None Include="Assets\Models\Military\Materials\UnlitVertexColour_Alpha.shader" />
