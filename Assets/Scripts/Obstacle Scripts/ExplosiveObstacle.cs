@@ -13,7 +13,7 @@ public class ExplosiveObstacle : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
-            // DEAL DAMAGE
+            target.gameObject.GetComponent<PlayerHealth>().ApplyDamage(damage);
 
             gameObject.SetActive(false);
         }
