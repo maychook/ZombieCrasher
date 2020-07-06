@@ -21,7 +21,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision target)
     {
-        if (target.gameObject.tag == "Obstacle")
+        if (target.gameObject.tag == "Obstacle" || target.gameObject.tag == "Zombie")
         {
             gameObject.SetActive(false);
         }

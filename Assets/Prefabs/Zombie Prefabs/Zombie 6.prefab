@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3555895861061726151}
   m_Layer: 0
   m_Name: Zombie 6
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodFXPrefab: {fileID: 1690365919121730, guid: 01905950d6bb84877a984f64b83d6c2d,
     type: 3}
-  speed: 1
 --- !u!1001 &2245593416111113899
 PrefabInstance:
   m_ObjectHideFlags: 0

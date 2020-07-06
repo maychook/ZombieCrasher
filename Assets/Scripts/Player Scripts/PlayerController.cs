@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : BaseController
 {
@@ -9,6 +10,11 @@ public class PlayerController : BaseController
     public Transform bullet_StartPoint;
     public GameObject bullet_Prefab;
     public ParticleSystem shootFX;
+
+    private Animator shootSliderAnim;
+
+    [HideInInspector]
+    public bool canShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +25,12 @@ public class PlayerController : BaseController
         */
 
         myBody = GetComponent<Rigidbody>();
+
+        shootSliderAnim = GameObject.Find("Fire Bar").GetComponent<Animator>();
+
+        // get the button and attach the shooting function
+        GameObject.Find("ShootBtn").GetComponent<Button>().onClick.AddListener(ShootingControl);
+        canShoot = true;
     }
 
     // Update is called once per frame
@@ -26,7 +38,6 @@ public class PlayerController : BaseController
     {
         ControlMovementWithKeyboard();
         ChangeRotation();
-        ShootingControl();
     }
 
     private void FixedUpdate()
@@ -103,12 +114,21 @@ public class PlayerController : BaseController
 
     public void ShootingControl()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Time.timeScale != 0)
         {
-            GameObject bullet = Instantiate(bullet_Prefab, bullet_StartPoint.position,
-                Quaternion.identity);
-            bullet.GetComponent<BulletScript>().Move(2000f);
-            shootFX.Play();
+            if (canShoot)
+            {
+                GameObject bullet = Instantiate(bullet_Prefab, bullet_StartPoint.position,
+                    Quaternion.identity);
+                bullet.GetComponent<BulletScript>().Move(2000f);
+                shootFX.Play();
+
+                canShoot = false;
+                // call the anim
+                shootSliderAnim.Play("Fill");
+            }
         }
+            
+        
     }
 }

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Block Scripts\GroundBlock.cs" />
     <Compile Include="Assets\Scripts\Bullet Scripts\BulletScript.cs" />
     <Compile Include="Assets\Scripts\Camera Scripts\SmoothFollow.cs" />
+    <Compile Include="Assets\Scripts\Helper Scripts\AnimationEvents.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\GameplayController.cs" />
     <Compile Include="Assets\Scripts\Obstacle Scripts\DestroyAfterTime.cs" />
     <Compile Include="Assets\Scripts\Obstacle Scripts\ExplosiveObstacle.cs" />
