@@ -16,6 +16,7 @@ public class GameplayController : MonoBehaviour
     private BaseController playerController;
 
     private Text score_Text;
+    private GameObject ShootBtn;
     private int zombie_Kill_Count;
 
     [SerializeField]
@@ -40,6 +41,8 @@ public class GameplayController : MonoBehaviour
         StartCoroutine("GenerateObstacles");
 
         score_Text = GameObject.Find("ScoreText").GetComponent<Text>();
+
+        ShootBtn = GameObject.Find("ShootBtn");
     }
 
     void MakeInstance()
@@ -140,20 +143,22 @@ public class GameplayController : MonoBehaviour
 
     public void PauseGame()
     {
+        ShootBtn.SetActive(false);
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void ResumeGame()
     {
+        ShootBtn.SetActive(true);
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
     }
 
     public void ExitGame()
     {
-        Time.timeScale = 0f;
-        // Scenemanager.loadscene("MainMenu");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void GameOver()
@@ -165,6 +170,7 @@ public class GameplayController : MonoBehaviour
 
     public void Restart()
     {
+        ShootBtn.SetActive(true);
         Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
     }

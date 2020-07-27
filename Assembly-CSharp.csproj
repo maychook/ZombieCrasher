@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Camera Scripts\SmoothFollow.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\AnimationEvents.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\GameplayController.cs" />
+    <Compile Include="Assets\Scripts\Helper Scripts\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Obstacle Scripts\DestroyAfterTime.cs" />
     <Compile Include="Assets\Scripts\Obstacle Scripts\ExplosiveObstacle.cs" />
     <Compile Include="Assets\Scripts\Obstacle Scripts\ZombieScript.cs" />
